@@ -1,7 +1,6 @@
 name: Scheduled Quest Check
 
 on:
-  pull_request:
   schedule:
     - cron: '*/30 * * * *' # Runs every 30 minutes
   workflow_dispatch:
