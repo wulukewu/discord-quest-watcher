@@ -63,12 +63,12 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const prImage = `${{ env.GHCR_REGISTRY }}/${{ env.IMAGE_NAME }}:pr-${{ github.event.pull_request.number }}`;
+            const prImage = `${{ env.REGISTRY }}/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}:pr-${{ github.event.pull_request.number }}`.toLowerCase();
             const comment_identifier = "<!-- docker-image-comment -->";
             const comment = `
-              🚀 Docker images built successfully! 
+              🚀 Docker images built successfully!
 
-              - Image: \`${prImage}\` 
+              - Image: \`${prImage}\`
 
               ${comment_identifier}
             `;
